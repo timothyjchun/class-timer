@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 
 const targetTimes = {
   방과후1: [17, 50, 30],
-  방과후_쉬는시간: [17, 55, 30],
-  방과후2: [18, 35, 30],
-  저녁시간: [19, 50, 30],
-  야자1: [21, 10, 30],
-  야자_쉬는시간: [21, 30, 30],
-  야자2: [22, 50, 30],
+  방과후_쉬는시간: [17, 56, 0],
+  방과후2: [18, 36, 0],
+  저녁시간: [19, 51, 0],
+  야자1: [21, 11, 0],
+  야자_쉬는시간: [21, 31, 0],
+  야자2: [22, 51, 0],
 };
 
 export default function Time() {
@@ -23,11 +23,7 @@ export default function Time() {
 
     if (now.getHours() === 17 && now.getMinutes() >= 10) {
       changeWhatTime("방과후1");
-      getTimeDifference(
-        targetTimes["방과후1"][0],
-        targetTimes["방과후1"][1],
-        targetTimes["방과후1"][2]
-      );
+      getTimeDifference(targetTimes["방과후1"][0], targetTimes["방과후1"][1]);
     } else if (
       now.getHours() === 17 &&
       now.getMinutes() >= 50 &&
